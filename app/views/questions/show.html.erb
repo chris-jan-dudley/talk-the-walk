@@ -1,0 +1,13 @@
+<section>
+    <div class="container text-center">
+        <h4> 
+            <%= @question.title %> 
+        </h4>
+        <p>
+            <%= @question.body %>
+        </p>
+        <p> 
+            <%= link_to(@question.user.name, @question.user) %>
+        </p>
+    </div>
+</section>

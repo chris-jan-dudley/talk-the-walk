@@ -1,6 +1,6 @@
 <% @questions.each do |question| %>
-    <section class="question">
-        <div class="summary">
+    <section>
+        <div class="container text-center">
             <h4>
                 <%= link_to(question.title, question) %>
             </h4>
@@ -8,9 +8,8 @@
                 <%= truncate(question.body, length: 150, separator: ' ') %>
             </p>
             <p> 
-                <%= question.user.name %>
+                <%= link_to(question.user.name, question.user) %>
             </p>
-            
         </div>
     </section>
 <% end %>

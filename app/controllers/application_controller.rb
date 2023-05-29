@@ -5,6 +5,10 @@ require 'byebug'
 class ApplicationController < ActionController::Base
   private
 
+    def beta_flag
+        false
+    end
+
   def require_signin
     return if current_user
 
@@ -17,6 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user
+  helper_method :beta_flag
 
   def current_user?(user)
     current_user == user

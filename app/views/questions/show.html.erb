@@ -18,9 +18,9 @@
                     <div class="card-body">
                     <h5 class="card-title"><%= answer.user.name %> says: </h5>
                         <p><%= answer.body %></p>
-                        <% if answer.user == current_user %>
+                        <% if answer.user == current_user && beta_flag %>
                             <%= button_to 'Edit', edit_question_answer_path(answer, @question), class: 'btn btn-primary'%>
-                            <%= button_to 'Delete', question_answer_path(answer, @question), data: { "turbo-method": :delete }, class: 'btn btn-primary' %>
+                            <%= button_to 'Delete', answer_path(answer), data: { "turbo-method": :delete }, params: { question_id: @question.id }, class: 'btn btn-primary' %>
                         <% end %>
                     </div>
                 </div>

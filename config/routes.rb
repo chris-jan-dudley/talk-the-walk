@@ -3,6 +3,9 @@
 Rails.application.routes.draw do
   root 'questions#index'
 
+  resources :answers
+  post 'answers/:id', to: 'answers#destroy'
+
   resources :questions do
     resources :answers, except: %i[index show]
   end

@@ -1,11 +1,11 @@
+# frozen_string_literal: true
 
 class SessionsController < ApplicationController
   def new; end
 
   def create
-    byebug
     user = User.find_by(email: params[:email])
-    if user && user.authenticate(params[:password])
+    if user&.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to (session[:intended_url] || user),
                   notice: "Welcome back, #{user.name}!"
@@ -19,6 +19,12 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     redirect_to :root, status: :see_other,
-                            notice: "You're now signed out!"
+                       notice: "You're now signed out!"
+  end
+
+  private
+
+  def answer_params
+    params.require(:answer).permit(:body)
   end
 end

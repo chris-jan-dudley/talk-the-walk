@@ -1,16 +1,17 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
-
   before do
     @user_params = {
-        user: {
-          name: 'test',
-          email: 'test@walks.com',
-          password: '123456',
-          password_confirmation: '123456'
-        }
+      user: {
+        name: 'test',
+        email: 'test@walks.com',
+        password: '123456',
+        password_confirmation: '123456'
       }
+    }
 
     @login_params = {
       email: 'chris@walks.com',

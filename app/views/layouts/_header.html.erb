@@ -6,9 +6,21 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="user">My Account</a>
-                </li>
+                <% if current_user %>
+                    <li class="nav-item">
+                        <%= link_to 'My Account', current_user, class: 'nav-link' %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to 'Sign Out', logout_path, data: { "turbo-method": :delete },  class: 'nav-link' %>
+                    </li>
+                <% else %>
+                    <li class="nav-item">
+                        <%= link_to 'Sign In', login_path, class: 'nav-link' %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to 'Sign Up', register_path, class: 'nav-link' %>
+                    </li>
+                <% end %>   
             </ul>
         </div>
     </div>

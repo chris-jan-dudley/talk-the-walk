@@ -3,9 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Answers', type: :request do
-
   before do
-
     @question = Question.find(1)
 
     @answer_params = {

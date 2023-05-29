@@ -1,0 +1,16 @@
+<%= form_for([@question, @answer]) do |f| %>
+    <div class="card">
+        <div class="card-body">
+            <div class='row'>
+                <div class='col-md-6'>
+                    <div class="mb-3">
+                        <%= f.text_field :body, { class: "form-control", placeholder: "Answer this qestion" } %>
+                    </div>
+                </div>
+                <div class='col'>
+                    <%= f.submit "Answer Question", class: "btn btn-primary" %>
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>

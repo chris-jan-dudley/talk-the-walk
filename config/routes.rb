@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   delete 'account', to: 'users#destroy'
 
   get 'login', to: 'sessions#new'
-  delete 'logout', to: 'sessions#destroy'
+  post 'login', to: 'sessions#create'
+  get 'logout', to: 'sessions#destroy'
 end

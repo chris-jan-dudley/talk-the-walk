@@ -51,6 +51,7 @@ gem 'rubocop'
 
 gem 'lorem', '~> 0.1.2'
 
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -81,6 +82,7 @@ group :test do
   gem 'rspec-rails', '~> 6.0.0'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'rails-controller-testing'
 end
 
 gem 'byebug', '~> 11.1', groups: %i[development test]

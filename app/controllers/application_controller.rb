@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     return if current_user
 
     session[:intended_url] = request.url
-    redirect_to new_session_url, alert: 'Please sign in first!'
+    redirect_to login_path, alert: 'Please sign in first!'
   end
 
   def current_user

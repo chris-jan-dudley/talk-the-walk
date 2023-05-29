@@ -49,3 +49,5 @@ Question.all.each do |question|
                              }
                            ])
 end
+
+User.create!(name: 'Tom', email: 'tom@walks.com', password: 'password', password_confirmation: 'password')

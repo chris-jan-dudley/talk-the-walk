@@ -1,0 +1,17 @@
+<% @questions.each do |question| %>
+    <section class="question">
+        <div class="summary">
+            <h4>
+                <%= link_to(question.title, question) %>
+            </h4>
+            <p>
+                <%= truncate(question.body, length: 150, separator: ' ') %>
+            </p>
+            <p> 
+                <%= question.user.name %>
+            </p>
+            
+        </div>
+    </section>
+<% end %>
+

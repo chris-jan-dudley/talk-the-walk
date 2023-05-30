@@ -88,7 +88,7 @@ RSpec.describe 'Users', type: :request do
 
   describe 'GET /logout' do
     it 'when logged in destroys session' do
-      get '/logout'
+      delete '/logout'
       expect(response).to have_http_status(303)
       expect(response).to redirect_to(root_path)
     end

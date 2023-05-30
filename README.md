@@ -13,7 +13,7 @@ To run the app:
     ./bin/dev                   # Starts the server with the bootstrap frontend
     ```
 3. In your browser, go to `http://localhost:3000/`. You should see the following homepage:
-    ![Homepage](app\assets\images\homepage.png)
+    ![Homepage](app/assets/images/homepage.png)
 
 ## Features
 

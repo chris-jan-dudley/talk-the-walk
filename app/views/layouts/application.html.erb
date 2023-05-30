@@ -2,23 +2,23 @@
 <html>
   <head>
     <title>TalkTheWalk</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= stylesheet_link_tag 'application', 'data-turbo-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbo-track': 'reload', defer: true %>
   </head>
 
   <body>
-    <%= render "layouts/header" %>
-    <div class="container">
-    <div class="row">
-      <div class="col"></div>
-      <div class="col-10">
+    <%= render 'layouts/header' %>
+    <div class='container'>
+    <div class='row g-3'>
+      <div class='col-2'></div>
+      <div class='col-8' style='margin:1em;'>
         <%= yield %>
       </div>
-      <div class="col"></div>
+      <div class='col-2'></div>
     </div>
   </div>
     

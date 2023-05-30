@@ -1,0 +1,7 @@
+<div class='card container text-center'>
+    <h2>Chris Asked</h2>
+    <%= render 'questions/list', questions: @questions %>
+    <div class='container text-center' style='margin:5px;'>
+        <%= link_to 'Ask a Question', new_question_path, class: 'btn btn-primary btn-lg' %>
+    </div>
+</div>

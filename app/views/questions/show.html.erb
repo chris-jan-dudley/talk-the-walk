@@ -1,4 +1,4 @@
-<div class="card container text-center">
+<div class='card container text-center'>
     <h4> 
         <%= @question.title %> 
     </h4>
@@ -11,27 +11,27 @@
 
 
     <% if @question.answers.any? %>
-        <div class="container text-center">
+        <div class='container text-center'>
             <h4>Answers</h4>
             <% @question.answers.each do |answer| %>
-                <div class="card" style='margin:5px;'>
-                    <div class="card-body">
-                    <h5 class="card-title"><%= answer.user.name %> says: </h5>
+                <div class='card' style='margin:5px;'>
+                    <div class='card-body'>
+                    <h5 class='card-title'><%= answer.user.name %> says: </h5>
                         <p><%= answer.body %></p>
                         <% if answer.user == current_user && beta_flag %>
                             <%= button_to 'Edit', edit_question_answer_path(answer, @question), class: 'btn btn-primary'%>
-                            <%= button_to 'Delete', answer_path(answer), data: { "turbo-method": :delete }, params: { question_id: @question.id }, class: 'btn btn-primary' %>
+                            <%= button_to 'Delete', answer_path(answer), data: { 'turbo-method': :delete }, params: { question_id: @question.id }, class: 'btn btn-primary' %>
                         <% end %>
                     </div>
                 </div>
             <% end %>
         </div>
     <% else %>
-    <div class="container text-center">
+    <div class='container text-center'>
             <h4>Oh dear, no answers yet.</h4>
     </div>
     <% end %>
-    <div class="container text-center" style='margin:5px;'>
+    <div class='container text-center' style='margin:5px;'>
         <%= link_to 'Add Answer', new_question_answer_path(@question), class: 'btn btn-primary btn-lg' %>
     </div>
 </div>

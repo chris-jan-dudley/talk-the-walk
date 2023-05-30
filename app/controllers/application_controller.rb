@@ -5,9 +5,9 @@ require 'byebug'
 class ApplicationController < ActionController::Base
   private
 
-    def beta_flag
-        false
-    end
+  def beta_flag
+    false
+  end
 
   def require_signin
     return if current_user

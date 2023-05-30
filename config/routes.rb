@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get 'account', to: 'users#account'
   get 'register', to: 'users#new'
-  put 'account', to: 'users#update'
+  get 'account/edit', to: 'users#edit'
   delete 'account', to: 'users#destroy'
 
   get 'login', to: 'sessions#new'

@@ -1,0 +1,43 @@
+<div class='card text-center'>
+    <h4>Welcome to your account <%= @user.name %></h4>
+        <div class='card mx-auto' style='width:20em;'>
+        <div class='card-header'>
+            Your Account Details
+        </div>
+        <ul class='list-group list-group-flush text-start'>
+            <li class='list-group-item'>
+                <div class='row'>
+                    <div class='col-sm-3'>
+                        Name:
+                    </div>
+                    <div class='col-lg-9'>
+                        <%= @user.name %>
+                    </div>
+                </div>
+            </li>
+            <li class='list-group-item'>
+                <div class='row'>
+                    <div class='col-sm-3'>
+                        Email:
+                    </div>
+                    <div class='col-lg-9'>
+                        <%= @user.email %>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <% if beta_flag %>
+            <%= link_to 'Edit Account', new_question_path, class: 'btn btn-primary', style: 'margin:1em;' %>
+        <% end %>
+    </div>
+
+    <div class='card text-center' style='margin:1em;'>
+        <h4> Your Questions </h4>
+        <%= render 'questions/list', questions: @questions %>
+        
+        <div class="container text-center" style='margin:5px;'>
+            <%= link_to 'Ask a Question', new_question_path, class: 'btn btn-primary btn-lg' %>
+        </div>
+
+    </div>
+</div>

@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @questions = @user.questions
     if @user == current_user
       redirect_to account_path
     else
@@ -30,7 +31,23 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit; end
+  def account
+    if current_user
+      @user = current_user
+      @questions = @user.questions
+    else
+      redirect_to register_path
+    end
+  end
+
+  def edit
+    if current_user
+      @user = current_user
+      @questions = @user.questions
+    else
+      redirect_to register_path
+    end
+  end
 
   def update
     current_user.update(user_params)

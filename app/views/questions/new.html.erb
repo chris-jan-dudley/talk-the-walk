@@ -1,21 +1,22 @@
-<div class="card container text-center">
+<div class='card container text-center'>
     <h4>What do you want to ask?</h4>
 
     <%= form_with(model: @question) do |f| %>
-        <div class="card">
-            <div class="card-body">
-
-                <div class="mb-3">
-                    <%= f.label :title, { class: "form-label"} %>
-                    <%= f.text_field :title, { class: "form-control", placeholder: "Your question" } %>
+        <div class='card' style='margin:1em;'>
+            <div class='card-body text-start'>
+                <div class='row g-3'>
+                    <div class='col-md-6'>
+                        <%= f.label :title, { class: 'form-label'} %>
+                        <%= f.text_field :title, { class: 'form-control', placeholder: 'Your question' } %>
+                    </div>
+                    <div class='col-md-12'>
+                        <%= f.label :detail, { class: 'form-label'} %>
+                        <%= f.text_area :body, { class: 'form-control', placeholder: 'More detail' } %>
+                    </div>
+                    <div class='col-md-6'>
+                        <%= f.submit 'Submit', class: 'btn btn-primary' %>
+                    </div>
                 </div>
-
-                <div class="mb-3">
-                    <%= f.label :body, { class: "form-label"} %>
-                    <%= f.text_field :body, { class: "form-control", placeholder: "More detail" } %>
-                </div>
-
-                <%= f.submit "Submit", class: "btn btn-primary" %>
             </div>
         </div>
     <% end %>
